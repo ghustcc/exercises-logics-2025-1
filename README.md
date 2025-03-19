@@ -1,2 +1,2 @@
 # exercises-logics
- Exercícios de lógica
+ Exercícios de lógica para Competitive Programming
