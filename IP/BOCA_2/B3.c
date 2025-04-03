@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() 
 {
@@ -7,16 +6,16 @@ int main()
     
     scanf("%i %i %i", &X, &Y, &Z);
 
-    if (X == Y == Z) {
-        printf("Equilatero\n");
-    } else if (X != Y == Z && X == Y != Z) {
-        printf("Isosceles\n");
-    } else if (X != Y != Z) {
-        printf("Escaleno\n");
-    } else if (X == 0 || Y == 0 || Z == 0) {
-        printf("Nao e triangulo\n");
-    } else if (X + Y < Z || X + Z < Y || Y + Z < X) {
-        printf("Nao e triangulo\n");
+    if ((X + Y <= Z || X + Z <= Y || Y + Z <= X) || (X <= 0 || Y <= 0 || Z <= 0)) {
+        printf("Nao forma triangulo\n");
+    } else {
+        if (X == Y && X == Z && Y == Z) {
+            printf("Equilatero\n");
+        } else if ((X != Y && X == Z || X != Y && Y == Z) || (X != Z && X == Y || X != Z && Z == Y) || (Y != Z && Y == X || Y != Z && Z == X)) {
+            printf("Isosceles\n");
+        } else if (X != Y && X != Z && Y != Z) {
+            printf("Escaleno\n");
+        }
     }
     return 0;
 }
