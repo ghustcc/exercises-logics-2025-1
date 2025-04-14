@@ -1,29 +1,28 @@
 #include <stdio.h>
-#include <math.h>
 
 int main()
 {
-    int X;
-    double S = 0.0;
-    int pot = 1;
-    int fatorial = 1;
+    float X;
+    float pot = 1.0;
+    float fatorial = 1;
+    int sinal = -1;
 
-    scanf("%d", &X);
+    scanf("%f", &X);
 
-    for (int i = 1; i <= X; i++)
+    float S = X;
+
+    for (int i = 1; i <= 19; i++)
     {
+        // Calculate the power of i
+        pot *= X;
+        // Calculate the factorial of i
+        fatorial *= (i);
 
-        pot *= i;
-
-        if (i % 2 == 0)
-        {
-            S += (double)X / (i + 1);
-        }
-        else
-        {
-            S -= (double)1 / (i + 1);
-        }
+        S += sinal*(pot / fatorial);
+        sinal *= -1;
     }
+
+    printf("%f\n", S);
 
     return 0;
 }

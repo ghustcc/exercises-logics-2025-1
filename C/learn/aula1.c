@@ -8,17 +8,12 @@ void input_clear()
     while ((c = getchar()) != '\n' && c != EOF) {}
 }
 
-void read_text(char *text, int size) 
+void ler_texto(char *text, int size) 
 {
-    // Read a line of text from the standard input
-    // deve-se limpar a entrada padrão, pois o fgets() lê até o \n, apenas se houver uma quebra de linha antes ,então o fgets() não vai ler nada.
+    // Lê a entrada padrão até o tamanho máximo ou até encontrar um '\n'
+    // Deve-se limpar a entrada padrão, pois o fgets() lê até o \n, apenas se houver uma quebra de linha antes, então o fgets() não vai ler nada.
     fgets(text, size, stdin);
     strtok(text, "\n"); // Remove the newline character from the string
-}
-
-int add(int a, int b) 
-{
-    return a + b;
 }
 
 int main() 
@@ -35,8 +30,10 @@ int main()
 
     printf("\nNome: %s\n", nome);
     printf("Idade: %d anos\n", idade);
-    printf("Sizeof: %d\n", sizeof(nome));
-    printf("Function: %d\n",  add(1, 2));
+
+    for (int i = 0; i < strlen(nome); i++) {
+        printf("%d: %c\n",i, nome[i]);
+    }
 
     return 0;
 }
