@@ -1,20 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void input_clear() 
-{
-    // Clear the input buffer
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF) {}
-}
-
-void ler_texto(char *text, int size) 
-{
-    // Lê a entrada padrão até o tamanho máximo ou até encontrar um '\n'
-    // Deve-se limpar a entrada padrão, pois o fgets() lê até o \n, apenas se houver uma quebra de linha antes, então o fgets() não vai ler nada.
-    fgets(text, size, stdin);
-    strtok(text, "\n"); // Remove the newline character from the string
-}
 
 int main() 
 {
