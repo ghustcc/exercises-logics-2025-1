@@ -19,16 +19,18 @@ int main()
     }
 
     for (int i = 0; i < 8; i++) {
-        printf("\n%i │", (i+1));
+        printf("\n%i │", (8 - i));
         for (int j = 0; j < 8; j++) {
             if ((j+1) == x || (i+1) == y) {
                 printf(" o ");
+            } else if (((j % 2 == 0) && (i % 2 == 0)) || ((j % 2 != 0) && (i % 2 != 0))) {
+                printf(" □ ");
             }
             else {
-                printf(" # ");
+                printf(" ■ ");
             }
         }
-        printf("| %i", (i+1));
+        printf("| %i", (8 - i));
     }
     
     printf("\n   ");
