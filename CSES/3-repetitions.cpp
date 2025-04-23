@@ -13,7 +13,6 @@ int main()
         // ATTTCGAA
         int count = 1;
         int j = i + 1;
-        key = DNA[i];
         while (j < DNA.size() && DNA[i] == DNA[j])
         {
             count++;
