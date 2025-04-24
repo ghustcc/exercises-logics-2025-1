@@ -5,20 +5,18 @@ using namespace std;
 int main()
 {
     string DNA;
-    int i = 0, maior = 1;
+    int i = 0, maior = 1, count = 1;
     cin >> DNA;
 
     while (i < DNA.size())
     {
-        // ATTTCGAA
-        int count = 1;
         int j = i + 1;
         while (j < DNA.size() && DNA[i] == DNA[j])
         {
             count++;
             j++;
         }
-        count > maior ? maior = count : maior = maior;
+        count > maior ? maior = count : count = 1;
         i = j;
     }
 
