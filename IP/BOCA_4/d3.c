@@ -7,11 +7,10 @@ int isPrimo(int number);
 // --- Main ---
 int main()
 {
-    int number;
-    printf(""); scanf("%d", &number);
+    int N;
+    printf(""); scanf("%d", &N);
 
-    isPrimo(number) == 0 ? printf("PRIMO") : printf("NAO PRIMO");
-
+    isPrimo(N) == 0 ? printf("PRIMO") : printf("NAO PRIMO");
 
     return 0;
 }
@@ -19,7 +18,8 @@ int main()
 // --- Funções ---
 int isPrimo(int number)
 {
-    double primo = 0;
+    int primo = 0;
+
     for (int i = 2; i < number; i++)
     {
         number % i == 0 ? primo = 1 : primo;

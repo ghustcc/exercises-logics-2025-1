@@ -10,7 +10,7 @@ int main()
     int N;
     printf(""); scanf("%d", &N);
 
-    isQuadradoPerfeito(N) == 0 ? printf("QUADRADO PERFEITO") : printf("NAO QUADRADO PERFEITO");
+    isQuadradoPerfeito(N) == 0 ? printf("QUADRADO PERFEITO") : printf("NAO EH QUADRADO PERFEITO");
 
     return 0;
 }
