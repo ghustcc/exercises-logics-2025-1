@@ -22,7 +22,9 @@ int isPrimo(int number)
 
     for (int i = 2; i < number; i++)
     {
-        number % i == 0 ? primo = 1 : primo;
+        number % i == 0 ? primo = 1 : primo;   
     }
+    if (number <= 1)
+        primo = 1;
     return primo;
 }
