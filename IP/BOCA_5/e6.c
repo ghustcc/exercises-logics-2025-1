@@ -2,30 +2,34 @@
 
 int main()
 {
-    int N, min;
+    int N;
     scanf("%d", &N);
 
     int vet[N];
 
-    for (int i = 1; i <= N; i++)
+    for (int i = 0; i < N; i++)
     {
         scanf("%d", &vet[i]);
     }
 
-    
-    for (int i = 0; i <= N; i++)
+    for (int i = 0; i < N; i++)
     {
-        min = vet[i];
-
-        int j = i;
-        while (vet[i] < min && j < N)
-        {
-            if (vet[i] < vet[j])
-            {
+        int pos = i;
+        int min = vet[i];
+        for (int j = i + 1; j < N; j++){
+            if (vet[j] < min) {
                 min = vet[j];
+                pos = j;
             }
-            j++;
         }
+        int temp = vet[i];
+        vet[i] = min;
+        vet[pos] = temp;
+    }
+
+    for (int i = 0; i < N; i++)
+    {
+        printf("%d ", vet[i]);
     }
 
     return 0;
