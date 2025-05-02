@@ -12,20 +12,32 @@ int main()
         scanf("%d", &vet[i]);
     }
 
+    // Insertion Sort
     for (int i = 0; i < N; i++)
     {
-        int pos = i;
-        int min = vet[i];
-        for (int j = i + 1; j < N; j++){
-            if (vet[j] < min) {
-                min = vet[j];
-                pos = j;
-            }
+        int key = vet[i];    
+        int j = i - 1;
+
+        while (j >= 0 && vet[j] > key) {
+            vet[j + 1] = vet[j];
+            j--;
         }
-        int temp = vet[i];
-        vet[i] = min;
-        vet[pos] = temp;
+
+        vet[j + 1] = key;
     }
+
+    // Selection Sort
+    // int pos = i;
+    // int min = vet[i];
+    // for (int j = i + 1; j < N; j++){
+    //     if (vet[j] < min) {
+    //         min = vet[j];
+    //         pos = j;
+    //     }
+    // }
+    // int temp = vet[i];
+    // vet[i] = min;
+    // vet[pos] = temp;
 
     for (int i = 0; i < N; i++)
     {
