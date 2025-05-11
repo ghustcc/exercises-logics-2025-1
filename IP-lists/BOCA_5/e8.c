@@ -2,7 +2,7 @@
 
 int main()
 {
-    int N, k, i, j, repeticao = 0, cont;
+    int N, k, i, j, key, cont = 1;
     scanf("%d", &N);
 
     int vet[N];
@@ -12,19 +12,22 @@ int main()
         scanf("%d", &vet[i]);
     }
 
-    for (j = 0; j < N; j++) {
-        cont = 0;
-        int vet_numbers[N];
-        for (k = 0; k < N; k++) {
-            if (vet[j] == vet[k]) {
-                cont++;
-            }
+    for (i = 1; i < N; i++) {
+        key = vet[i];
+        j = i - 1;
+        while (j >= 0 && vet[j] > key) {
+            vet[j + 1] = vet[j];
+            j--;
         }
-        if (cont == 1)
-            repeticao++;
+        vet[j + 1] =  key;
     }
 
-    printf("%d ", repeticao);
+    for (j = 1; j < N; j++) {
+        if (vet[j - 1] < vet[j])
+            cont++;
+    }
+
+    printf("%d ", cont);
     
     return 0;
 }
