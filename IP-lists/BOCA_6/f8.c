@@ -20,8 +20,10 @@ int main() {
 
     for (i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            printf("%.6lf ", softmax(i, matriz[i][j], matriz));
+            printf("%.6lf", softmax(i, matriz[i][j], matriz));
+            if (j < M - 1) printf(" ");
         }
+        printf("\n");
     }
 
     return 0;
